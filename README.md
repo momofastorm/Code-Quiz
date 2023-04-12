@@ -4,7 +4,7 @@ So that you can gauge progress compared to your peers.
 
 Repo-https://github.com/momofastorm/Code-Quiz 
 
-deploy-
+deploy-https://momofastorm.github.io/Code-Quiz/
 
 
 ## Acceptance Criteria
