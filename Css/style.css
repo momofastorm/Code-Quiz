@@ -28,7 +28,7 @@ body {
   
   /*Clickable*/
   a {
-    color: lavender;
+    color: grey;
     text-decoration: none;
   
     transition: color 0.2s ease-in-out;
@@ -37,7 +37,7 @@ body {
   a:hover, 
   a:focus, 
   a:active {
-    color: plum ;
+    color: white ;
   }
   
   button,
@@ -49,7 +49,7 @@ body {
     border-radius: 4px;
     border-style: none;
   
-    background-color:fuchsia;
+    background-color:rgb(13, 65, 147);
   
     color:white;
     cursor: pointer;
@@ -65,8 +65,8 @@ body {
   button:hover, 
   button:focus, 
   button:active{
-    background-color: lavender;
-    color:fuchsia;
+    background-color: whitender;
+    color:rgb(13, 65, 147);
   }
   
   .back-button {
@@ -81,8 +81,8 @@ body {
   /*****Nav*****/
   nav {
     padding: 15px;
-    border-bottom: 1px solid rgb(253, 16, 253);
-    background-color:gray;
+    border-bottom: 1px solid rgb(13, 65, 147);
+    background-color:rgb(4, 71, 8);
   }
   
   /*****Sections*****/
@@ -127,7 +127,7 @@ body {
   }
   
   #timer {
-    border-bottom: 1px solid fuchsia;
+    border-bottom: 1px solid rgb(13, 65, 147);
     padding-bottom: 15px;
   
     font-size: 1.35em;
@@ -135,7 +135,7 @@ body {
   }
   
   #time-remaining{
-    color: purple;
+    color: rgb(237, 15, 159);
   }
   
   #choices {
@@ -154,17 +154,17 @@ body {
   }
   
   #correct {
-   color: fuchsia;
+   color: rgb(13, 65, 147);
   }
   
   #wrong {
-    color: blue;
+    color: rgb(232, 17, 42);
   }
   
   /*gray line before choice status*/
   #quiz-questions, 
   #end {
-    border-bottom: 1px solid fuchsia;
+    border-bottom: 1px solid rgb(13, 65, 147);
     padding-bottom: 15px;
     text-align:left;
   }
@@ -177,7 +177,7 @@ body {
   
   #score {
     font-weight: bold;
-    color: fuchsia;
+    color: rgb(13, 65, 147);
     text-align:left;
   }
   
@@ -201,11 +201,11 @@ body {
   }
   
   .error {
-    border: 1.5px solid blue;
+    border: 1.5px solid rgb(232, 17, 42);
   }
   
   #error-message {
-    color: blue;
+    color: rgb(232, 17, 42);
     margin-top: 5px;
   }
   
@@ -215,7 +215,7 @@ body {
   }
   
   tr:nth-child(even) {
-    background-color: fuchsia;
+    background-color: rgb(13, 65, 147);
   }
   
   td, th {
@@ -223,7 +223,7 @@ body {
   }
   
   th {
-    border-bottom: 1px solid fuchsia;
+    border-bottom: 1px solid rgb(13, 65, 147);
   }
   
   td {

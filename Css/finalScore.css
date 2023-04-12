@@ -32,8 +32,8 @@ body {
   #goBack{
     position: relative;
     bottom: -100px;
-    background-color: rgb(189, 189, 189);
-    border-color: rgb(160, 159, 160);
+    background-color: rgb(3, 167, 52);
+    border-color: black;
     border-width: 3px;
     border-radius: 12px;
   }
@@ -41,8 +41,8 @@ body {
   #clear{
     position: relative;
     bottom: -100px;
-    background-color: rgb(189, 189, 189);
-    border-color: rgb(160, 159, 160);
+    background-color: rgb(3, 167, 52);
+    border-color: black;
     border-width: 3px;
     border-radius: 12px;
   }
