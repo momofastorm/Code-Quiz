@@ -3,9 +3,7 @@ A timed quiz on JavaScript fundamentals that will store high scores.
 So that you can gauge progress compared to your peers.
 
 Repo-https://github.com/momofastorm/Code-Quiz 
-
 deploy-https://momofastorm.github.io/Code-Quiz/
-
 
 ## Acceptance Criteria
 
@@ -23,7 +21,4 @@ WHEN the game is over
 THEN I can save my initials and my score
 ```
 
-## Mock-Up
-![image](https://user-images.githubusercontent.com/127702972/231580048-819f83b3-6cc9-48c1-a9ac-8a0eca335653.png)
-
-T
+An assignment for UT Coding Boot Camp - Module 4
