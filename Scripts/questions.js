@@ -5,7 +5,7 @@ const START_SECTION = document.getElementById("start-page");
 function startGame() {
 START_SECTION.classList.add('hidden')
 QUIZ_SECTIONS.classList.remove('hidden')
-
+}
 const START_BTN = document.getElementById("start-button");
 //quiz
 var quizArea = document.getElementById("questions");
@@ -36,33 +36,33 @@ class Question {
 }
 
 // Multi-choice questions//
-var questions = 
+var quizQuestions = 
   {
     question: "Javascript is an _______ language?",
     answerChoices: ["Object-Oriented", "Object-Based", "Procedural", "Numbers"],
-    correctAnswer: "Object-Oriented",
+    correctAnswer: "Object-Oriented"
   }
-  var questions = 
+  var quizQuestions = 
   {
     question: "Which of the following keywords is used to define a variable in Javascript?",
     answerChoices:  ["var", "let", "Both A and B", "None of the above"],
-    correctAnswer: "Both A and B",
+    correctAnswer: "Both A and B"
   }
 
-  var questions = 
+  var quizQuestions = 
   {
     question: "Which of the following methods is used to access HTML elements using Javascript?",
     answerChoices:  ["getElementbyId()", "getElementsbyClassName()", "Both A and B", "None of the Above"],
-    correctAnswer: "Both A and B",
+    correctAnswer: "Both A and B"
   }
-  var questions = 
+  var quizQuestions = 
   {
     question: "Which of the following methods can be used to display data in some form using Javascript?",
     answerChoices:  ["document.write()", "console.log()", "window.alert()", "All of the above"],
     correctAnswer: "All of the above",
   }
   
-  var questions = 
+  var quizQuestions = 
   
   {
     question: "Arrays in JavaScript are defined by which of the following statements?",
@@ -70,46 +70,46 @@ var questions =
     correctAnswer: "It is an ordered list of values",
   
   }
-  var questions = 
+  var quizQuestions = 
   
   {
     question: "Which of the following is not javascript data types?",
     answerChoices:  ["Null type", "Undefined type", "Number type", "All of the Above"],
     correctAnswer: "All of the Above",
   }
-  var questions = 
+  var quizQuestions = 
   {
     question: "Where is Client-side JavaScript code is embedded within HTML documents?",
     answerChoices:  ["A URL that uses the special javascript:code", "A URL that uses the special javascript:protocol", " A URL that uses the special javascript:encoding", "A URL that uses the special javascript:stack"],
     correctAnswer: "A URL that uses the special javascript:protocol",
   }
   
-  var questions = 
+  var quizQuestions = 
   {
     question: "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
     answerChoices:  ["Position", "Window", "Standard", "Location"],
     correctAnswer: "Window",
   }
   
-  var questions = 
+  var quizQuestions = 
   {
     question: "Which of the following is not an error in JavaScript?",
     answerChoices:  ["Missing of Bracket", "Division by zero", "Syntax error", "Missing of semicolons"],
     correctAnswer: "Division by zero",
   }
 
-  var questions = 
+  var quizQuestions = 
   {
     question: "Which of the following is not an error in JavaScript?",
     answerChoices:  ["Missing of Bracket", "Division by zero", "Syntax error", "Missing of semicolons"],
     correctAnswer: "Division by zero",
   }
 
-  function startGame() {
-    START_SECTION.classList.add('hidden')
-    QUIZ_SECTIONS.classList.remove('hidden')
+  // function startGame() {
+  //   START_SECTION.classList.add('hidden')
+  //   QUIZ_SECTIONS.classList.remove('hidden')
     
-    }
+  //   }
 var currentQuestion = 1;
 
 // const QUESTION_1 = new Question ("Javascript is an _______ language?"), 
@@ -147,14 +147,14 @@ CHOICES.addEventListener('click', processChoice);
 SUBMIT_SCORE.addEventListener('submit', processInput);
 
 /******** START GAME ********/ 
-function startGame() {
-  showElement(QUIZ_SECTIONS, QUIZ_SECTION);
+// function startGame() {
+//   showElement(QUIZ_SECTIONS, QUIZ_SECTION);
   
   // displayTime();  
   // displayQuestion();
 
-  startTimer();
-}
+//   startTimer();
+// }
 
 /******** SHOWING/HIDING ELEMENTS ********/ 
 function showElement(siblingList, showElement) {
