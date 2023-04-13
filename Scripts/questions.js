@@ -3,8 +3,8 @@ const QUIZ_SECTIONS = document.querySelectorAll(".quiz-section");
 //start
 const START_SECTION = document.getElementById("start");
 const START_BTN = document.getElementById("start-button");
-//q's
-const QUIZ_SECTION = document.getElementById("quiz-questions");
+//quiz
+var quizArea = document.getElementById("questions");
 //
 const CORRECT = document.getElementById("correct");
 const WRONG = document.getElementById("wrong");
@@ -21,7 +21,7 @@ const ERROR_MESSAGE = document.getElementById("error-message");
 const END_SECTION = document.getElementById("end");
 const END_TITLE = document.getElementById("end-title");
 
-//Q's
+Questions
 class Question {
   constructor(question, choices, indexOfCorrectChoice) {
     this.question = question;
@@ -31,25 +31,67 @@ class Question {
 }
 
 // Multi-choice questions//
+var questions = 
+  {
+    question: "Javascript is an _______ language?",
+    answerChoices: ["Object-Oriented", "Object-Based", "Procedural", "Numbers"],
+    correctAnswer: "Object-Oriented"
+  }
+  var questions = 
+  {
+    question: "Which of the following keywords is used to define a variable in Javascript?",
+    answerChoices:  ["var", "let", "Both A and B", "None of the above"],
+    correctAnswer: "Both A and B",
+  }
 
-const QUESTION_1 = new Question("Commonly used data types DO NOT include: ", 
-  ["Strings", "Booleans", "Alerts", "Numbers"], 2);
-const QUESTION_2 = new Question("How do you call a function called myFunction?", 
-  ["myFunction()", "call myFunction()", "call function myFunction", "call select myFunction"], 1);
-const QUESTION_3 = new Question("How do you write 'Hello World' in an alert box?", 
-  ["msgBox('Hello World)", "alertBox('Hello World')", "alert('Hello World')", "msg('Hello World)"], 3);
-const QUESTION_4 = new Question("How do you write an IF statement in JavaScript?", 
-  ["if i = 5 or else", "if i = 5 then", "if i == 5 then", "if(i == 5)"], 4);
-const QUESTION_5 = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ", 
-  ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
-const QUESTION_6 = new Question("What is the correct way to call the random method on the Math global object:", 
-  ['random.Math()', 'Math(randon)', 'Math.random()', 'math.random()'], 3);
+  var questions = 
+  {
+    question: "Which of the following methods is used to access HTML elements using Javascript?",
+    answerChoices:  ["getElementbyId()", "getElementsbyClassName()", "Both A and B", "None of the Above"],
+    correctAnswer: "Both A and B",
+  }
+  var questions = 
+  {
+    question: "Which of the following methods can be used to display data in some form using Javascript?",
+    answerChoices:  ["document.write()", "console.log()", "window.alert()", "All of the above"],
+    correctAnswer: "All of the above",
+  }
+  var questions = 
+  {
+    question: "Arrays in JavaScript are defined by which of the following statements?",
+    answerChoices:  [It is an ordered list of values", " It is an ordered list of objects", "It is an ordered list of string", "It is an ordered list of functions"],
+    correctAnswer: It is an ordered list of values",
+  }
 
-const QUESTION_LIST = [QUESTION_1, QUESTION_2, QUESTION_3, QUESTION_4, QUESTION_5,QUESTION_6,];
+  
+var currentQuestion = 1;
 
-var currentQuestion = 0;
+// const QUESTION_1 = new Question ("Javascript is an _______ language?"), 
+//   ["Object-Oriented", "Object-Based", "Procedural", "Numbers"], 1);
+// const QUESTION_2 = new Question("Which of the following keywords is used to define a variable in Javascript?", 
+//   ["var", "let", "Both A and B", "None of the above"], 3);
+// const QUESTION_3 = new Question("Which of the following methods is used to access HTML elements using Javascript?", 
+//   ["getElementbyId()", "getElementsbyClassName()", "Both A and B", "None of the Above"], 3);
+// const QUESTION_4 = new Question("Which of the following methods can be used to display data in some form using Javascript?", 
+//   ["document.write()", "console.log()", "window.alert()", "All of the above"], 4);
+// const QUESTION_5 = new Question("Arrays in JavaScript are defined by which of the following statements?", 
+//   [" It is an ordered list of values", " It is an ordered list of objects", "It is an ordered list of string", "It is an ordered list of functions"], 1);
+// const QUESTION_6 = new Question("Which of the following is not javascript data types?", 
+//   ["Null type", "Undefined type", "Number type", "All of the Above"], 4);
+//   const QUESTION_7 = new Question("Where is Client-side JavaScript code is embedded within HTML documents?", 
+//   ["A URL that uses the special javascript:code", "A URL that uses the special javascript:protocol", " A URL that uses the special javascript:encoding", "A URL that uses the special javascript:stack"], 2);
+//   const QUESTION_8 = new Question("Which of the following object is the main entry point to all client-side JavaScript features and APIs?", 
+//   ["Position", "Window", "Standard", "Location"], 2);
+//   const QUESTION_9 = new Question("Which of the following is not an error in JavaScript?", 
+//   ["Missing of Bracket", "Division by zero", "Syntax error", "Missing of semicolons"], 2);
+//   const QUESTION_10 = new Question("Which of the following function of String object causes a string to be displayed as struck-out text, as if it were in a <strike> tag?", 
+//   ["sup()", "small ()", "strike()", "sub()"], 3);
 
-var totalTime = 60;
+// const QUESTION_LIST = [QUESTION_1, QUESTION_2, QUESTION_3, QUESTION_4, QUESTION_5,QUESTION_6, QUESTION_7, QUESTION_8, QUESTION_9];
+
+// var currentQuestion = 0;
+
+var totalTime = 90;
 var totalTimeInterval;
 var choiceStatusTimeout; 
 
