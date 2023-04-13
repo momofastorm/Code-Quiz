@@ -59,11 +59,11 @@ var questions =
   var questions = 
   {
     question: "Arrays in JavaScript are defined by which of the following statements?",
-    answerChoices:  [It is an ordered list of values", " It is an ordered list of objects", "It is an ordered list of string", "It is an ordered list of functions"],
-    correctAnswer: It is an ordered list of values",
+    answerChoices:  ["It is an ordered list of values", " It is an ordered list of objects", "It is an ordered list of string", "It is an ordered list of functions"],
+    correctAnswer: "It is an ordered list of values",
   }
 
-  
+
 var currentQuestion = 1;
 
 // const QUESTION_1 = new Question ("Javascript is an _______ language?"), 
