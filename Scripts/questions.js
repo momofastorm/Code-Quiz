@@ -5,6 +5,7 @@ const START_SECTION = document.getElementById("start-page");
 function startGame() {
 START_SECTION.classList.add('hidden')
 QUIZ_SECTIONS.classList.remove('hidden')
+displayQuestion() 
 }
 const START_BTN = document.getElementById("start-button");
 //quiz
@@ -36,106 +37,73 @@ class Question {
 }
 
 // Multi-choice questions//
-var quizQuestions = 
+var questions = [
   {
     question: "Javascript is an _______ language?",
     answerChoices: ["Object-Oriented", "Object-Based", "Procedural", "Numbers"],
     correctAnswer: "Object-Oriented"
-  }
-  var quizQuestions = 
+  },
+
   {
     question: "Which of the following keywords is used to define a variable in Javascript?",
     answerChoices:  ["var", "let", "Both A and B", "None of the above"],
     correctAnswer: "Both A and B"
-  }
-
-  var quizQuestions = 
-  {
+  },
+{
     question: "Which of the following methods is used to access HTML elements using Javascript?",
     answerChoices:  ["getElementbyId()", "getElementsbyClassName()", "Both A and B", "None of the Above"],
     correctAnswer: "Both A and B"
-  }
-  var quizQuestions = 
+  },
+
   {
     question: "Which of the following methods can be used to display data in some form using Javascript?",
     answerChoices:  ["document.write()", "console.log()", "window.alert()", "All of the above"],
     correctAnswer: "All of the above",
-  }
+  },
   
-  var quizQuestions = 
   
   {
     question: "Arrays in JavaScript are defined by which of the following statements?",
     answerChoices:  ["It is an ordered list of values", " It is an ordered list of objects", "It is an ordered list of string", "It is an ordered list of functions"],
     correctAnswer: "It is an ordered list of values",
   
-  }
-  var quizQuestions = 
+  },
   
   {
     question: "Which of the following is not javascript data types?",
     answerChoices:  ["Null type", "Undefined type", "Number type", "All of the Above"],
     correctAnswer: "All of the Above",
-  }
-  var quizQuestions = 
+  },
   {
     question: "Where is Client-side JavaScript code is embedded within HTML documents?",
     answerChoices:  ["A URL that uses the special javascript:code", "A URL that uses the special javascript:protocol", " A URL that uses the special javascript:encoding", "A URL that uses the special javascript:stack"],
     correctAnswer: "A URL that uses the special javascript:protocol",
-  }
+  },
   
-  var quizQuestions = 
+  
   {
     question: "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
     answerChoices:  ["Position", "Window", "Standard", "Location"],
     correctAnswer: "Window",
-  }
+  },
   
-  var quizQuestions = 
+
   {
     question: "Which of the following is not an error in JavaScript?",
     answerChoices:  ["Missing of Bracket", "Division by zero", "Syntax error", "Missing of semicolons"],
     correctAnswer: "Division by zero",
-  }
+  },
 
-  var quizQuestions = 
+
   {
     question: "Which of the following is not an error in JavaScript?",
     answerChoices:  ["Missing of Bracket", "Division by zero", "Syntax error", "Missing of semicolons"],
     correctAnswer: "Division by zero",
-  }
+  }]
+  
+  var currentQuestion = 1;
 
-  // function startGame() {
-  //   START_SECTION.classList.add('hidden')
-  //   QUIZ_SECTIONS.classList.remove('hidden')
-    
-  //   }
-var currentQuestion = 1;
-
-// const QUESTION_1 = new Question ("Javascript is an _______ language?"), 
-//   ["Object-Oriented", "Object-Based", "Procedural", "Numbers"], 1);
-// const QUESTION_2 = new Question("Which of the following keywords is used to define a variable in Javascript?", 
-//   ["var", "let", "Both A and B", "None of the above"], 3);
-// const QUESTION_3 = new Question("Which of the following methods is used to access HTML elements using Javascript?", 
-//   ["getElementbyId()", "getElementsbyClassName()", "Both A and B", "None of the Above"], 3);
-// const QUESTION_4 = new Question("Which of the following methods can be used to display data in some form using Javascript?", 
-//   ["document.write()", "console.log()", "window.alert()", "All of the above"], 4);
-// const QUESTION_5 = new Question("Arrays in JavaScript are defined by which of the following statements?", 
-//   [" It is an ordered list of values", " It is an ordered list of objects", "It is an ordered list of string", "It is an ordered list of functions"], 1);
-// const QUESTION_6 = new Question("Which of the following is not javascript data types?", 
-//   ["Null type", "Undefined type", "Number type", "All of the Above"], 4);
-//   const QUESTION_7 = new Question("Where is Client-side JavaScript code is embedded within HTML documents?", 
-//   ["A URL that uses the special javascript:code", "A URL that uses the special javascript:protocol", " A URL that uses the special javascript:encoding", "A URL that uses the special javascript:stack"], 2);
-//   const QUESTION_8 = new Question("Which of the following object is the main entry point to all client-side JavaScript features and APIs?", 
-//   ["Position", "Window", "Standard", "Location"], 2);
-//   const QUESTION_9 = new Question("Which of the following is not an error in JavaScript?", 
-//   ["Missing of Bracket", "Division by zero", "Syntax error", "Missing of semicolons"], 2);
-//   const QUESTION_10 = new Question("Which of the following function of String object causes a string to be displayed as struck-out text, as if it were in a <strike> tag?", 
-//   ["sup()", "small ()", "strike()", "sub()"], 3);
-
-// const QUESTION_LIST = [QUESTION_1, QUESTION_2, QUESTION_3, QUESTION_4, QUESTION_5,QUESTION_6, QUESTION_7, QUESTION_8, QUESTION_9];
-
-// var currentQuestion = 0;
+ 
 
 var totalTime = 90;
 var totalTimeInterval;
@@ -146,25 +114,20 @@ START_BTN.addEventListener('click', startGame);
 CHOICES.addEventListener('click', processChoice);
 SUBMIT_SCORE.addEventListener('submit', processInput);
 
-/******** START GAME ********/ 
-// function startGame() {
-//   showElement(QUIZ_SECTIONS, QUIZ_SECTION);
-  
-  // displayTime();  
-  // displayQuestion();
 
-//   startTimer();
-// }
 
 /******** SHOWING/HIDING ELEMENTS ********/ 
-function showElement(siblingList, showElement) {
+function showElement(siblingList, element) {
+ console.log(siblingList);
   for (element of siblingList) {
     hideElement(element);
   }
-  showElement.classList.remove("hidden");
+  element.classList.remove("hidden");
 } 
 
 function hideElement(element) {
+console.log(element);
+  if (!element) return;
   if (!element.classList.contains("hidden")) {
     element.classList.add("hidden");
   }
@@ -193,15 +156,18 @@ function checkTime() {
 
 /******** QUESTIONS ********/ 
 function displayQuestion() {
-  QUESTION.textContent = QUESTION_LIST[currentQuestion].question;
-
+  
+if (currentQuestion<questions.length) {
+  QUESTION.textContent = questions[currentQuestion].question;
   displayChoiceList();
+}
+  
 }
 
 function displayChoiceList() {
   CHOICES.innerHTML = "";
 
-  QUESTION_LIST[currentQuestion].choices.forEach(function(answer, index) {
+ questions[currentQuestion].answerChoices.forEach(function(answer, index) {
     const li = document.createElement("li");
     li.dataset.index = index;
     const button = document.createElement("button");
@@ -243,7 +209,7 @@ function checkChoice(userChoice) {
 }
 
 function isChoiceCorrect(choice) {
-  return choice === QUESTION_LIST[currentQuestion].indexOfCorrectChoice;
+  return choice === questions[currentQuestion].indexOfCorrectChoice;
 }
 
 function displayWrongChoiceEffects() {
@@ -275,7 +241,7 @@ function displayCorrectChoiceEffects() {
 //Get next question
 function getNextQuestion() {
   currentQuestion++;
-  if (currentQuestion >= QUESTION_LIST.length) {
+  if (currentQuestion >= questions.length) {
     endGame();
   } else {
     displayQuestion();
@@ -286,7 +252,7 @@ function getNextQuestion() {
 function endGame() {
   clearInterval(totalTimeInterval);
   
-  showElement(QUIZ_SECTIONS, END_SECTION);
+  showElement(questions, END_SECTION);
   displayScore();
   setEndHeading();
 }
