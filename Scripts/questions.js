@@ -1,7 +1,11 @@
-//list
-const QUIZ_SECTIONS = document.querySelectorAll(".quiz-section");
-//start
-const START_SECTION = document.getElementById("start");
+const QUIZ_SECTIONS = document.getElementById("quiz-questions");
+
+const START_SECTION = document.getElementById("start-page");
+
+function startGame() {
+START_SECTION.classList.add('hidden')
+QUIZ_SECTIONS.classList.remove('hidden')
+
 const START_BTN = document.getElementById("start-button");
 //quiz
 var quizArea = document.getElementById("questions");
@@ -13,6 +17,7 @@ const CHOICE_STATUSES = document.querySelectorAll(".choice-status");
 const QUESTION = document.getElementById("question");
 const CHOICES = document.getElementById("choices");
 const TIME_REMAINING = document.getElementById("time-remaining");
+
 //End
 const SCORE = document.getElementById("score");
 const INITIALS_INPUT = document.getElementById("initials");
@@ -21,7 +26,7 @@ const ERROR_MESSAGE = document.getElementById("error-message");
 const END_SECTION = document.getElementById("end");
 const END_TITLE = document.getElementById("end-title");
 
-Questions
+
 class Question {
   constructor(question, choices, indexOfCorrectChoice) {
     this.question = question;
@@ -35,7 +40,7 @@ var questions =
   {
     question: "Javascript is an _______ language?",
     answerChoices: ["Object-Oriented", "Object-Based", "Procedural", "Numbers"],
-    correctAnswer: "Object-Oriented"
+    correctAnswer: "Object-Oriented",
   }
   var questions = 
   {
@@ -56,14 +61,55 @@ var questions =
     answerChoices:  ["document.write()", "console.log()", "window.alert()", "All of the above"],
     correctAnswer: "All of the above",
   }
+  
   var questions = 
+  
   {
     question: "Arrays in JavaScript are defined by which of the following statements?",
     answerChoices:  ["It is an ordered list of values", " It is an ordered list of objects", "It is an ordered list of string", "It is an ordered list of functions"],
     correctAnswer: "It is an ordered list of values",
+  
+  }
+  var questions = 
+  
+  {
+    question: "Which of the following is not javascript data types?",
+    answerChoices:  ["Null type", "Undefined type", "Number type", "All of the Above"],
+    correctAnswer: "All of the Above",
+  }
+  var questions = 
+  {
+    question: "Where is Client-side JavaScript code is embedded within HTML documents?",
+    answerChoices:  ["A URL that uses the special javascript:code", "A URL that uses the special javascript:protocol", " A URL that uses the special javascript:encoding", "A URL that uses the special javascript:stack"],
+    correctAnswer: "A URL that uses the special javascript:protocol",
+  }
+  
+  var questions = 
+  {
+    question: "Which of the following object is the main entry point to all client-side JavaScript features and APIs?",
+    answerChoices:  ["Position", "Window", "Standard", "Location"],
+    correctAnswer: "Window",
+  }
+  
+  var questions = 
+  {
+    question: "Which of the following is not an error in JavaScript?",
+    answerChoices:  ["Missing of Bracket", "Division by zero", "Syntax error", "Missing of semicolons"],
+    correctAnswer: "Division by zero",
   }
 
+  var questions = 
+  {
+    question: "Which of the following is not an error in JavaScript?",
+    answerChoices:  ["Missing of Bracket", "Division by zero", "Syntax error", "Missing of semicolons"],
+    correctAnswer: "Division by zero",
+  }
 
+  function startGame() {
+    START_SECTION.classList.add('hidden')
+    QUIZ_SECTIONS.classList.remove('hidden')
+    
+    }
 var currentQuestion = 1;
 
 // const QUESTION_1 = new Question ("Javascript is an _______ language?"), 
@@ -104,8 +150,8 @@ SUBMIT_SCORE.addEventListener('submit', processInput);
 function startGame() {
   showElement(QUIZ_SECTIONS, QUIZ_SECTION);
   
-  displayTime();  
-  displayQuestion();
+  // displayTime();  
+  // displayQuestion();
 
   startTimer();
 }
